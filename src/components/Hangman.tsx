@@ -58,32 +58,3 @@ const Hangman = ({words}: HangmanProps) => {
 
 export default Hangman;
 
-
-function ListaFiltrada({ lista, filtro }) {
-  const listaFiltrada = lista.filter(item => item.includes(filtro));
-  return (
-    <ul>
-      {listaFiltrada.map(item => <li key={item}>{item}</li>)}
-    </ul>
-  );
-}
-
-function Formulario({ onSubmit }) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    onSubmit(formData);
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      {/* campos del formulario */}
-      <button type="submit">Enviar</button>
-    </form>
-  );
-}
-
-function NombreCompleto({ nombre, apellido }) {
-  const nombreCompleto = useMemo(() => `${nombre} ${apellido}`, [nombre, apellido]);
-  return <div>{nombreCompleto}</div>;
-}

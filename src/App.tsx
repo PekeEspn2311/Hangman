@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Hangman from "./components/Hangman";
 import Welcome from "./components/Welcome";
 
@@ -17,7 +17,7 @@ function App() {
     };
   }, []); // Empty dependency array ensures this effect runs only once
 
-  const formatTime = (seconds) => {
+  const formatTime = (seconds: number) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
@@ -33,3 +33,4 @@ function App() {
 }
 
 export default App;
+ 
